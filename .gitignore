@@ -1,3 +1,5 @@
 venv
 .env
 pycache
+.firebase
+__pycache__
