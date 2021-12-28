@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Assessment Questionare</title>
+  <!-- Plugins CSS -->
+  <link href="css/plugins.css" rel="stylesheet">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+
+
+  <!-- Custom CSS -->
+  <link href="css/landingpage.css" rel="stylesheet">
+  
+
+</head>
+
+<body>
+  <!-- Pre Loader -->
+  <div id="dvLoading"></div>
+  <!-- Navigation Start -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-header navbar-mobile">
+    <div class="navbar-container container">
+
+      <div class="navbar-brand">
+        <a class="navbar-brand-logo" href="#top">
+          <h4 style="font-weight: bolder;">Fire Loans</h4>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+    </div>
+  </nav>
+  <!-- Navigation End -->
+
+
+  <!-- questions Start -->
+  <div aria-live="polite" aria-atomic="true" style="position: relative;">
+    <div style="position: absolute; top: 2rem; right: 1rem;">
+      <div class="toast bg-danger text-white">
+        <div class="toast-header">
+          <strong class="mr-auto">Required field</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body" id="toast-body">
+          This is field is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="question" class="question-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">What gender best describes you?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                <div class="col-6">
+                                  <a href="#" class="btn btn-primary" onclick="setGender('Male')">Male</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-primary" onclick="setGender('Female')">Female</a>
+                                </div>
+                                  
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick=" validateGender(); nextPrev(1);">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">What best describes where you live?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="#" class="btn btn-primary" onclick="setPropertyArea('Semiurban')">Semiurban</a>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="#" class="btn btn-primary" onclick="setPropertyArea('Urban')">Urban</a>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="#" class="btn btn-primary" onclick="setPropertyArea('Rural')">Rural</a>
+                                </div>
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="validatePropertyArea(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/003-profits.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">Are you self employed?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-6">
+                                      <a href="#" class="btn btn-primary" onclick="setSelfEmployed('Yes')">Yes</a>
+                                  </div>
+                                  <div class="col-6">
+                                      <a href="#" class="btn btn-primary" onclick="setSelfEmployed('No')">No</a>
+                                  </div>
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="validateSelfEmployed(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/003-profits.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">Are you a graduate?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-6">
+                                      <a href="#" class="btn btn-primary" onclick="setEducationLevel('Yes')">Yes</a>
+                                  </div>
+                                  <div class="col-6">
+                                      <a href="#" class="btn btn-primary" onclick="setEducationLevel('No')">No</a>
+                                  </div>
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="validateEducationLevel(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/003-profits.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">Are you a married?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-6">
+                                      <a href="#" class="btn btn-primary" onclick="setMarried('Yes')">Yes</a>
+                                  </div>
+                                  <div class="col-6">
+                                      <a href="#" class="btn btn-primary" onclick="setMarried('No')">No</a>
+                                  </div>
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="validateMarried(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">How many dependents do you have?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" id="dependents" placeholder="">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="setDependents(); validateDependents(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">How much do you earn per month?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" id="income" placeholder="">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="setIncome(); validateIncome(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">How much does your coapplicant earn?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" id="coapplicant_income" placeholder="">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="setCoapplicantIncome(); validateCoapplicantIncome(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">How much would you like to loan?</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" id="loan_amount" placeholder="">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="setLoanAmount(); validateLoanAmount(); nextPrev(1)">Next</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 mx-auto">
+                    <div class="tab">
+                        <div class="question-box py-5">
+                            <div class="question-icon">
+                              <img src="images/questions/004-ingots.png" alt="icon">
+                            </div>
+                            <div class="question-text">
+                              <h3 class="question-heading">For how many days would you like to loan the money for? (7-360)</h3>
+                              <p class="question-para mb-4"></p>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control" id="loan_term" placeholder="">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="col-12 mt-4">
+                                      <a href="#" id="nextBtn" class="btn btn-primary" onclick="setLoanTerm(); validateLoanTerm(); submitLoanPayLoad();">Submit</a>
+                                  </div>
+                              </div>
+                            </div>
+                
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- questions End -->
+
+
+  <!-- jQuery Min JS -->
+  <script src="js/jquery-min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+  <!-- Popper Min JS -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap Min JS -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/preloader.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Form Transition  -->
+  <script src="js/formTransition.js"></script>
+  <script src="js/submitform.js"></script>
+  <script src="js/validateform.js"></script>
+</body>
+
+
+
+</html>
