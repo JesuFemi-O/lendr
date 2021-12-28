@@ -1,0 +1,22 @@
+{
+    "hosting":{
+        "public": "public",
+        "redirects": [
+            {
+                "source": "/",
+                "destination": "/Home.html",
+                "type": 301
+            }
+        ],
+        "ignore":[
+            "firebase.json",
+            "**/.*",
+            "venv",
+            "notebooks",
+            "server",
+            "readme.md"
+        ]
+    }
+    
+
+}
