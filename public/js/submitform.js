@@ -47,7 +47,7 @@ function setLoanTerm() {
 
 async function submitLoanPayLoad() {
     $('#dvLoading').show()
-    const res = await axios.post("//fireloans-oarj5mfxkq-uc.a.run.app/api/model/predict/", loanPayload, {headers:{"token": "d8527109-7f36-41cf-8316-53d36916461c"}})
+    const res = await axios.post("https://fireloans-oarj5mfxkq-uc.a.run.app/api/model/predict", loanPayload, {headers:{"token": "d8527109-7f36-41cf-8316-53d36916461c"}})
     if (res.data.Eligible == "Yes") {
         location.href = "/Eligible.html"
     }
