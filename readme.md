@@ -34,8 +34,8 @@ print(str(uuid.uuid4()))
 
 - run the shell scripts as follows:
 ~~~
-chmod+x run.sh
-chmod+x build.sh
+chmod +x run.sh
+chmod +x build.sh
 ~~~
 
 - build the image
