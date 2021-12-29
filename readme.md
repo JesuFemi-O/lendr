@@ -48,6 +48,6 @@ chmod +x build.sh
 ./run.sh
 ~~~
 
-- navigate to the api documentation on localhost:8000/docs
+- navigate to the api documentation on localhost:8080/docs
 
 
