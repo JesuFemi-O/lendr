@@ -1,1 +1,1 @@
-docker run --name localfireloans -p 8000:8000 fireloans
+docker run --name localfireloans -p 8080:8080 fireloans
