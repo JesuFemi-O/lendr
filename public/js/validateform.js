@@ -1,3 +1,4 @@
+const positiveNumberPattern = /^\d+$/
 
 function validateGender() { 
     if(!loanPayload.gender || loanPayload.gender.length === 0) {
@@ -5,7 +6,7 @@ function validateGender() {
         $('.toast').toast({ delay: 2500 })
         $('.toast').toast('show')
         throw new Error("field is required")
-    }
+    } 
 }
 
 function validatePropertyArea() {
@@ -51,6 +52,12 @@ function validateDependents() {
         $('.toast').toast('show')
         throw new Error("field is required")
     }
+    if (positiveNumberPattern.test(loanPayload.dependents) === false) {
+        document.getElementById("toast-body").innerHTML = "dependents is invalid"
+        $('.toast').toast({ delay: 2500 })
+        $('.toast').toast('show')
+        throw new Error("invalid input")
+    }
 }
 
 function validateIncome() {
@@ -59,6 +66,12 @@ function validateIncome() {
         $('.toast').toast({ delay: 2500 })
         $('.toast').toast('show')
         throw new Error("field is required")
+    }
+    if (positiveNumberPattern.test(loanPayload.income) === false) {
+        document.getElementById("toast-body").innerHTML = "income is invalid"
+        $('.toast').toast({ delay: 2500 })
+        $('.toast').toast('show')
+        throw new Error("invalid input")
     }
 }
 
@@ -69,6 +82,12 @@ function validateCoapplicantIncome() {
         $('.toast').toast('show')
         throw new Error("field is required")
     }
+    if (positiveNumberPattern.test(loanPayload.coapplicant_income) === false) {
+        document.getElementById("toast-body").innerHTML = "coapplicant income is invalid"
+        $('.toast').toast({ delay: 2500 })
+        $('.toast').toast('show')
+        throw new Error("invalid input")
+    }
 }
 
 function validateLoanAmount() {
@@ -78,6 +97,12 @@ function validateLoanAmount() {
         $('.toast').toast('show')
         throw new Error("field is required")
     }
+    if (positiveNumberPattern.test(loanPayload.loan_amount) === false) {
+        document.getElementById("toast-body").innerHTML = "loan amount is invalid"
+        $('.toast').toast({ delay: 2500 })
+        $('.toast').toast('show')
+        throw new Error("invalid input")
+    }
 }
 
 function validateLoanTerm() {
@@ -86,5 +111,17 @@ function validateLoanTerm() {
         $('.toast').toast({ delay: 2500 })
         $('.toast').toast('show')
         throw new Error("field is required")
+    }
+    if (positiveNumberPattern.test(loanPayload.loan_term) === false ) {
+        document.getElementById("toast-body").innerHTML = "loan term is invalid"
+        $('.toast').toast({ delay: 2500 })
+        $('.toast').toast('show')
+        throw new Error("invalid input")
+    }
+    if (parseInt(loanPayload.loan_term) < 7 || parseInt(loanPayload.loan_term) > 360) {
+        document.getElementById("toast-body").innerHTML = "loan term is minimum 7 days and maximum 360 days"
+        $('.toast').toast({ delay: 2500 })
+        $('.toast').toast('show')
+        throw new Error("invalid input")
     }
 }
